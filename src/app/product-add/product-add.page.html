@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{ productModel.id != null ? 'product-update' : 'product-add' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-list>
+      <ion-item>
+        <!-- <ion-label stacked>Name</ion-label> -->
+        <ion-input [(ngModel)]="productModel.name" name="name" placeholder="Name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <!-- <ion-label stacked>Price</ion-label> -->
+        <ion-input [(ngModel)]="productModel.price" name="price" placeholder="Price"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button color="primary" (click)="addProduct()">{{productModel.id != null ? 'Update' : 'Add'}}</ion-button>
+    <ion-button color="primary" routerLink="" (click)="getAllProduct()">Cancel</ion-button>
+  </form>
+
+</ion-content>
